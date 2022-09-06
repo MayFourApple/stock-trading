@@ -1,4 +1,8 @@
 class Admin::TradersController < ApplicationController
+  def index
+    @traders = Trader.all
+  end
+
   def pending
     @traders = Trader.pending
   end
