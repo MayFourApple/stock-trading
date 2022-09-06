@@ -5,4 +5,8 @@ class Trader < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   scope :pending, -> { where(approved_at: nil) }
+
+  def approve
+    update(approved_at: Time.now)
+  end
 end

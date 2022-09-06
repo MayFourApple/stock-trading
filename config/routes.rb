@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       collection do
         get :pending
       end
+
+      member do
+        get :approve
+      end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
