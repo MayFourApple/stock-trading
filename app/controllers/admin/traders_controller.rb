@@ -3,6 +3,10 @@ class Admin::TradersController < ApplicationController
     @traders = Trader.all
   end
 
+  def show
+    @trader = Trader.find(params[:id])
+  end
+
   def pending
     @traders = Trader.pending
   end
