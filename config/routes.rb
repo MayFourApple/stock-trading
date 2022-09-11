@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :traders
-  devise_for :admins
+  devise_for :traders, controllers: {
+    sessions: 'traders/sessions',
+    registrations: 'traders/registrations'
+  }
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions',
+    registrations: 'admins/registrations'
+  }
 
   get 'admin', to: 'admin#index'
   get 'trader', to: 'trader#index'
