@@ -1,8 +1,0 @@
-<table>
-  <% @traders.each do |trader| %>
-    <tr>
-      <td><%= trader.email %></td>
-      <td><%= link_to 'Approve', approve_admin_trader_path(trader) %></td>
-    </tr>
-  <% end %>
-</table>
