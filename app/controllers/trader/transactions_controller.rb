@@ -11,9 +11,13 @@ class Trader::TransactionsController < ApplicationController
     
     if transaction.buy?
       portfolio.update(shares: portfolio.shares.to_i + transaction.shares)
-    end
 
-    redirect_to trader_path
+      redirect_to trader_path
+    elsif transaction.sell?
+      portfolio.update(shares: portfolio.shares.to_i - transaction.shares)
+
+      redirect_to trader_portfolio_path
+    end
   end
 
   private

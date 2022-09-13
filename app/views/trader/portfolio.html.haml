@@ -7,3 +7,5 @@
         %td= portfolio.shares
         %td= portfolio.current_price
         %td= portfolio.current_value
+        %td
+          = link_to 'Sell', sell_trader_stock_path(portfolio.id)

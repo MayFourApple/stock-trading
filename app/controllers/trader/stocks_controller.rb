@@ -5,4 +5,9 @@ class Trader::StocksController < ApplicationController
     @quote = IEXClient.quote(params[:id])
     @transaction = current_trader.transactions.new(category: :buy, stock: @quote.symbol)
   end
+
+  def sell
+    @portfolio = Portfolio.find(params[:id])
+    @transaction = current_trader.transactions.new(category: :sell, stock: @portfolio.stock)
+  end
 end

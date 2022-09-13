@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     resources :stocks do
       member do
         get :buy
+        get :sell
       end
     end
     resources :transactions
