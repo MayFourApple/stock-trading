@@ -22,6 +22,8 @@ Rails.application.routes.draw do
         get :approve
       end
     end
+
+    resources :transactions
   end
 
   namespace :trader do
