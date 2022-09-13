@@ -1,0 +1,25 @@
+- if current_trader.approved?
+  %table
+    %thead
+      %th Symbol
+      %th Price
+      %th Volume
+      %th Change
+      %th Low
+      %th Open
+      %th Previous Close
+      %th
+    %tbody
+      - @quotes.each do |quote|
+        %tr
+          %td= quote.symbol
+          %td= quote.iex_realtime_price
+          %td= quote.iex_volume
+          %td= quote.change_percent_s
+          %td= quote.low
+          %td= quote.open
+          %td= quote.previous_close
+          %td
+            = link_to 'Buy', buy_trader_stock_path(quote.symbol)
+- else
+  %p Your Stocktrader account is pending approval from an admin.

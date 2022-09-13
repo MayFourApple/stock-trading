@@ -22,6 +22,15 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :trader do
+    resources :stocks do
+      member do
+        get :buy
+      end
+    end
+    resources :transactions
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

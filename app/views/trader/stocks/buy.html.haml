@@ -1,0 +1,5 @@
+= form_for @transaction, url: trader_transactions_path do |f|
+  = f.hidden_field :category
+  = f.text_field :stock
+  = f.text_field :shares
+  = f.submit
