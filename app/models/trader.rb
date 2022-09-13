@@ -8,5 +8,6 @@ class Trader < ApplicationRecord
 
   def approve
     update(approved_at: Time.now)
+    TraderMailer.with(trader: self).approval.deliver_now
   end
 end
