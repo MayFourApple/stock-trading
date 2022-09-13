@@ -1,6 +1,10 @@
 class Trader::TransactionsController < ApplicationController
   before_action :authenticate_trader!
 
+  def index
+    @transactions = current_trader.transactions
+  end
+
   def create
     transaction = current_trader.transactions.create(transaction_params)
     portfolio = current_trader.portfolios.find_or_create_by(stock: transaction.stock)

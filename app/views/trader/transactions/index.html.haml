@@ -1,0 +1,10 @@
+%table
+  %thead
+  %tbody
+    - @transactions.each do |transaction|
+      %tr
+        %td= transaction.category
+        %td= transaction.stock
+        %td= transaction.shares
+        %td= transaction.price
+        %td= transaction.created_at
