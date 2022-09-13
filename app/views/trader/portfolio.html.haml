@@ -1,0 +1,9 @@
+%table
+  %thead
+  %tbody
+    - @portfolios.each do |portfolio|
+      %tr
+        %td= portfolio.stock
+        %td= portfolio.shares
+        %td= portfolio.current_price
+        %td= portfolio.current_value

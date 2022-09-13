@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin#index'
   get 'trader', to: 'trader#index'
+  get 'trader/portfolio', to: 'trader#portfolio'
 
   namespace :admin do
     resources :traders do
