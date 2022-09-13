@@ -11,7 +11,7 @@
       = f.password_field :password, autocomplete: "current-password", placeholder: "password123"
     - if devise_mapping.rememberable?
       .field
-        = f.check_box :remember_me
+        = f.check_box :remember_me, class: "rememberme-checkbox"
         = f.label :remember_me
     .actions
       = f.submit "Log in", class: 'btn btn-md btn-secondary'
