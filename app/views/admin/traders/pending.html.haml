@@ -1,5 +1,8 @@
 %table
   - @traders.each do |trader|
+    %tr 
+      %th Email
+      %th Status
     %tr
       %td= trader.email
       %td= link_to 'Approve', approve_admin_trader_path(trader)

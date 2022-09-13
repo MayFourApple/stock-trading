@@ -1,5 +1,10 @@
 %table
   - @traders.each do |trader|
+    %tr 
+      %th Email
+      %th Created At:
+      %th Comfirmed At:
+      %th Approved At:
     %tr
       %td= link_to trader.email, admin_trader_path(trader)
       %td= trader.created_at

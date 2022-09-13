@@ -1,21 +1,22 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "traders/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "traders/shared/links"
+%main.container{ :style => "width: 400px; margin-top: 100px; padding: 0"}
+  %h2 Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-container" }) do |f|
+    = render "admins/shared/error_messages", resource: resource
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@email.com"
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, autocomplete: "new-password", placeholder: "password123"
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password123"
+    .actions{ :style => "margin-top: .50rem"}
+      = f.submit "Sign up", class: 'btn btn-md btn-secondary'
+      = render "traders/shared/links"
