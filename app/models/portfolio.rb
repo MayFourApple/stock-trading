@@ -1,4 +1,6 @@
 class Portfolio < ApplicationRecord
+  belongs_to :trader
+
   def current_price
     quote.iex_realtime_price
   end
