@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     registrations: 'admins/registrations'
   }
 
+  root to: 'homepage#index'
   get 'admin', to: 'admin#index'
   get 'trader', to: 'trader#index'
   get 'trader/portfolio', to: 'trader#portfolio'
